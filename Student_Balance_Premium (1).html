@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Balance Premium</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif;scroll-behavior:smooth}
+body{background:#fff;color:#333;line-height:1.7}
+nav{position:fixed;top:0;width:100%;background:#fff;box-shadow:0 2px 15px rgba(0,0,0,.1);padding:15px;text-align:center;z-index:1000}
+nav a{margin:0 12px;color:#e91e63;text-decoration:none;font-weight:bold}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#ffd6ea,#ffffff)}
+.hero h1{font-size:5rem;color:#e91e63}
+.hero p{max-width:800px;margin:20px auto;font-size:1.2rem}
+.btn{display:inline-block;padding:15px 30px;background:#e91e63;color:#fff;text-decoration:none;border-radius:30px;margin:8px}
+section{padding:100px 10%}
+h2{text-align:center;color:#e91e63;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:#fff;padding:25px;border-radius:20px;box-shadow:0 5px 20px rgba(233,30,99,.15)}
+.bar{height:24px;background:#ffe3ef;border-radius:20px;overflow:hidden;margin:10px 0 20px}
+.fill{height:100%;background:#e91e63}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #f7c0d8;padding:12px}
+th{background:#fff0f6}
+.quiz{max-width:600px;margin:auto;text-align:center}
+button{padding:12px 20px;background:#e91e63;color:white;border:none;border-radius:10px;cursor:pointer}
+footer{text-align:center;padding:40px;background:#fff0f6}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#about">Проблема</a>
+<a href="#causes">Причини</a>
+<a href="#stats">Статистика</a>
+<a href="#time">Час</a>
+<a href="#tips">Поради</a>
+<a href="#quiz">Тест</a>
+</nav>
+
+<section class="hero">
+<div>
+<h1>Student Balance</h1>
+<p>Дослідження проблеми перевантаження студентів через дедлайни, стрес та нестачу часу.</p>
+<a class="btn" href="#about">Почати</a>
+<a class="btn" href="#tips">Поради</a>
+</div>
+</section>
+
+<section id="about">
+<h2>🎓 Актуальність проблеми</h2>
+<div class="card">
+Перевантаження студентів є актуальною проблемою сучасної освіти. Велика кількість завдань, контрольних робіт та іспитів впливає на успішність, психологічний стан і якість життя студентів.
+</div>
+</section>
+
+<section id="causes">
+<h2>📚 Причини перевантаження</h2>
+<div class="grid">
+<div class="card">Велика кількість дисциплін</div>
+<div class="card">Одночасні дедлайни</div>
+<div class="card">Поєднання навчання і роботи</div>
+<div class="card">Недостатнє планування часу</div>
+<div class="card">Низький рівень відпочинку</div>
+<div class="card">Постійний стрес</div>
+</div>
+</section>
+
+<section id="stats">
+<h2>📊 Статистика</h2>
+<p>Стрес — 80%</p><div class="bar"><div class="fill" style="width:80%"></div></div>
+<p>Проблеми зі сном — 65%</p><div class="bar"><div class="fill" style="width:65%"></div></div>
+<p>Відкладання справ — 70%</p><div class="bar"><div class="fill" style="width:70%"></div></div>
+<p>Поєднання навчання та роботи — 55%</p><div class="bar"><div class="fill" style="width:55%"></div></div>
+</section>
+
+<section id="time">
+<h2>📅 Розподіл часу успішного студента</h2>
+<table>
+<tr><th>Дія</th><th>Час</th></tr>
+<tr><td>Навчання</td><td>6 годин</td></tr>
+<tr><td>Самопідготовка</td><td>2 години</td></tr>
+<tr><td>Відпочинок</td><td>3 години</td></tr>
+<tr><td>Сон</td><td>8 годин</td></tr>
+<tr><td>Особисті справи</td><td>5 годин</td></tr>
+</table>
+</section>
+
+<section id="tips">
+<h2>💡 Поради від успішних студентів</h2>
+<div class="grid">
+<div class="card">🎯 Плануй тиждень наперед</div>
+<div class="card">⏱ Використовуй Pomodoro</div>
+<div class="card">😴 Дотримуйся режиму сну</div>
+<div class="card">📚 Починай завдання раніше</div>
+<div class="card">🤝 Працюй у команді</div>
+<div class="card">☕ Роби регулярні перерви</div>
+</div>
+</section>
+
+<section id="quiz">
+<h2>🧠 Міні-тест: Рівень стресу</h2>
+<div class="quiz">
+<p>Чи часто ти не встигаєш виконувати завдання вчасно?</p><br>
+<button onclick="result('Високий рівень стресу. Варто переглянути свій розклад.')">Так</button>
+<button onclick="result('Рівень стресу помірний. Продовжуй планувати свій час.')">Ні</button>
+<p id="out" style="margin-top:20px;font-weight:bold"></p>
+</div>
+</section>
+
+<footer>
+Student Balance Premium • Навчальний вебпроєкт • 2026
+</footer>
+
+<script>
+function result(text){
+ document.getElementById('out').innerText=text;
+}
+</script>
+
+</body>
+</html>
